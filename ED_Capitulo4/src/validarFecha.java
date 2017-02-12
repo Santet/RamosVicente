@@ -15,6 +15,11 @@ public class validarFecha {
 		this.mes = mes;
 		this.anio = anio;
 	}
+	private boolean bisiesto(){
+		if ((anio % 400 == 0) || ((anio % 4 == 0) && (anio % 100 != 0)))
+			return true;
+		else return false;
+	}
 	private int diasMes(){
 		int diasMes = 0;
 		switch (mes) {
@@ -31,10 +36,8 @@ public class validarFecha {
 		case 9:
 		case 11: diasMes = 30;
 			break;
-		case 2:
-			if ((anio % 400 == 0) || ((anio % 4 == 0) && (anio % 100 != 0)))
-				diasMes = 29;
-			else diasMes = 28;
+		case 2: if (bisiesto()) diasMes = 29;
+				else diasMes = 28;
 			break;
 		}
 		return diasMes;
