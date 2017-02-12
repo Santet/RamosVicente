@@ -59,6 +59,7 @@ public class validarFecha {
 		
 		System.out.println("Introduce un año: ");
 		anyo = Integer.parseInt(entrada.readLine());
+		
 		validarFecha f1 = new validarFecha(dia, mes, anyo);
 		if (f1.valida())
 			System.out.println("La fecha: " + dia + "/" + mes + "/" + anyo+ " es válida");
